@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const mongoDB = async () => {
+const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to Mongo");
@@ -13,4 +13,4 @@ const mongoDB = async () => {
   }
 };
 
-export default mongoDB;
+export default connectDB;
