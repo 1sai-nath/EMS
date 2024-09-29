@@ -1,26 +1,24 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const loginSchema = new mongoose.Schema(
-  {
+const loginSchema = new mongoose.Schema({
     f_sno: {
-      type: Number,
-      required: true,
-      unique: true,
+        type: Number,
+        required: true,
+        unique: true,
     },
     f_userName: {
-      type: String,
-      required: true,
-      trim: true,
-      unique: true,
+        type: String,
+        required: true,
+        trim: true,
+        unique: true,
     },
     f_Pwd: {
-      type: String,
-      required: true,
-      minlength: 6,
+        type: String,
+        required: true,
+        minlength: 6,
     },
-  },
-  { timestamps: true }
-);
+}, { timestamps: true });
 
-const Login = mongoose.model("Login", loginSchema);
+const Login = mongoose.model('Login', loginSchema);
+
 export default Login;

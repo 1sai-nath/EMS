@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const employeeShema = new mongoose.Schema(
+const employeeSchema = new mongoose.Schema(
   {
     f_Id: {
       type: Number,
@@ -21,12 +21,12 @@ const employeeShema = new mongoose.Schema(
       unique: true,
       trim: true,
       lowercase: true,
-      match: /.+\@.+\..+/,
+      match: /.+\@.+\..+/, // Basic email format validation
     },
     f_Mobile: {
       type: String,
       required: true,
-      match: /^[0-9]{10}$/,
+      match: /^[0-9]{10}$/, // Validate mobile number format (10 digits)
     },
     f_Designation: {
       type: String,
@@ -44,5 +44,6 @@ const employeeShema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Employee=mongoose.model("Employee",employeeShema);
+const Employee = mongoose.model("Employee", employeeSchema);
+
 export default Employee;
